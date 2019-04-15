@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hola-deployment
+spec:
+  selector:
+    matchLabels:
+      app: hola
+  replicas: 5
+  template:
+    metadata:
+      labels:
+        app: hola
+    spec:
+      containers:
+      - name: hola
+        image: ludinnento/hola:latest
+        ports:
+        - containerPort: 8080
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 8080
+          initialDelaySeconds: 30
+          periodSeconds: 30
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 8080
+          initialDelaySeconds: 15
+          periodSeconds: 3

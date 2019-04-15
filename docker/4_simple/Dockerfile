@@ -1,0 +1,4 @@
+FROM golang:latest
+
+ARG SOURCE_LOCATION=/go/src/app
+WORKDIR ${SOURCE_LOCATION}

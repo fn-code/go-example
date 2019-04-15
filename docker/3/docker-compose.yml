@@ -1,7 +1,0 @@
-version: "3"
-services:
-  testing:
-    build: .
-    ports:
-      - "3030:9090"
-    command: ./main
