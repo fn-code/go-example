@@ -1,0 +1,15 @@
+server:
+  host: "localhost"
+  port: 8080
+  https: true
+  certFile: "./config/server1.pem"
+  keyFile: "./config/server1.key"
+
+database:
+  maxOpenConn: 0 # default is 0
+  maxIdleConn: 0 # default is 0
+  connMaxLifetime: 0 # this connMaxLifetime valus is in second, default is 0 or zero
+  sslMode: "disable" # the value is enable / disable
+
+logger:
+  logFolder: "./log"
