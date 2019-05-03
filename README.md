@@ -2,7 +2,7 @@
 This repository is example of go programming
 
 # List of example :
-- bit
+- [bit](https://github.com/fn-code/go-example/tree/master/bit)
 - functional programming
 - cgo
 - algoritm data structur
