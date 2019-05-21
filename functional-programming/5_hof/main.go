@@ -36,6 +36,7 @@ func (bc BookCollection) Filter(fb FilterBook) BookCollection {
 		if fb(v.title) {
 			bcoll = append(bcoll, v)
 		}
+
 	}
 	return bcoll
 }
@@ -49,21 +50,14 @@ func ByTitle(s string) FilterBook {
 func main() {
 
 	bc := LoadCollection()
-	bc = bc.Add("Microservice with go", "Gopher 3").Add("Golang", "Gopher 4")
-	bc = bc.Filter(
-		ByTitle("programming"),
-	)
+	bc = bc.Add("Microservice with go", "Gopher 3").
+		Add("Golang", "Gopher 4").
+		Filter(
+			ByTitle("programming"),
+		)
+
 	for _, v := range bc {
 		fmt.Println(v.title)
 	}
-
-	mp := map[string]string{
-		"Honda":  "LX",
-		"Lexus":  "LS",
-		"Toyota": "EV",
-		"Ford":   "XL",
-		"GM":     "X",
-	}["Honda"]
-	fmt.Println(mp)
 
 }
