@@ -14,3 +14,4 @@ This repository is example of go programming
 - [open-browser](https://github.com/fn-code/go-example/tree/master/open-browser)
 - [testing](https://github.com/fn-code/go-example/tree/master/testing)
 - [yaml](https://github.com/fn-code/go-example/tree/master/yaml)
+- [cli](https://github.com/fn-code/go-example/tree/master/cli/1_cobra)
