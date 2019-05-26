@@ -54,7 +54,8 @@ func main() {
 		Add("Golang", "Gopher 4").
 		Filter(
 			ByTitle("programming"),
-		)
+		).
+		Add("Gophers", "Hehehe")
 
 	for _, v := range bc {
 		fmt.Println(v.title)
