@@ -1,0 +1,64 @@
+INFO  : 18:25:05 Metrics server listening on 127.0.0.1:3000
+INFO  : 18:25:06 Proxy listening on 127.0.0.1:8080
+DEBUG : 2019/06/07 18:25:16 request.go:80: makeRequest: 
+client: 18:25:16 GET http://127.0.0.1:3000
+INFO  : 18:25:16 SUCCESS!
+INFO  : 18:25:16 FAILURE!
+DEBUG : 2019/06/07 18:25:17 request.go:35: > 1 request done.
+DEBUG : 2019/06/07 18:25:26 request.go:80: makeRequest: 
+client: 18:25:26 GET http://web02:3000
+INFO  : 18:25:26 SUCCESS!
+INFO  : 18:25:26 FAILURE!
+DEBUG : 2019/06/07 18:25:26 request.go:35: > 2 request done.
+DEBUG : 2019/06/07 18:25:36 request.go:80: makeRequest: 
+client: 18:25:36 GET http://web03:3000
+INFO  : 18:25:36 SUCCESS!
+INFO  : 18:25:36 FAILURE!
+DEBUG : 2019/06/07 18:25:36 request.go:35: > 3 request done.
+DEBUG : 2019/06/07 18:25:46 request.go:80: makeRequest: 
+client: 18:25:46 GET http://web01:3000
+INFO  : 18:25:46 SUCCESS!
+INFO  : 18:25:46 FAILURE!
+DEBUG : 2019/06/07 18:25:46 request.go:35: > 4 request done.
+DEBUG : 2019/06/07 18:25:56 request.go:80: makeRequest: 
+client: 18:25:56 GET http://web02:3000
+INFO  : 18:25:56 SUCCESS!
+INFO  : 18:25:56 FAILURE!
+DEBUG : 2019/06/07 18:25:56 request.go:35: > 5 request done.
+DEBUG : 2019/06/07 18:26:06 request.go:80: makeRequest: 
+client: 18:26:06 GET http://web03:3000
+INFO  : 18:26:06 SUCCESS!
+INFO  : 18:26:06 FAILURE!
+DEBUG : 2019/06/07 18:26:06 request.go:35: > 6 request done.
+DEBUG : 2019/06/07 18:26:16 request.go:80: makeRequest: 
+client: 18:26:16 GET http://web01:3000
+INFO  : 18:26:16 SUCCESS!
+INFO  : 18:26:16 FAILURE!
+DEBUG : 2019/06/07 18:26:16 request.go:35: > 7 request done.
+DEBUG : 2019/06/07 18:26:26 request.go:80: makeRequest: 
+client: 18:26:26 GET http://web02:3000
+INFO  : 18:26:26 SUCCESS!
+INFO  : 18:26:26 FAILURE!
+DEBUG : 2019/06/07 18:26:26 request.go:35: > 8 request done.
+DEBUG : 2019/06/07 18:26:36 request.go:80: makeRequest: 
+client: 18:26:36 GET http://web03:3000
+INFO  : 18:26:36 SUCCESS!
+INFO  : 18:26:36 FAILURE!
+DEBUG : 2019/06/07 18:26:36 request.go:35: > 9 request done.
+DEBUG : 2019/06/07 18:26:46 request.go:80: makeRequest: 
+client: 18:26:46 GET http://web01:3000
+INFO  : 18:26:46 SUCCESS!
+INFO  : 18:26:46 FAILURE!
+DEBUG : 2019/06/07 18:26:46 request.go:75: All requests done.
+INFO  : 18:26:46 
+>> It took 1m40.005310044s
+INFO  : 18:26:46 metrics
+INFO  : 18:26:46 Go to http://127.0.0.1:3000/easy-metrics?show=Stats
+INFO  : 18:26:46 CTRL+C to exit
+DEBUG : 2019/06/07 18:26:55 metric.go:67: - randInt: 3081
+DEBUG : 2019/06/07 18:27:05 metric.go:67: - randInt: 2887
+DEBUG : 2019/06/07 18:27:36 metric.go:67: - randInt: 1847
+DEBUG : 2019/06/07 18:32:32 metric.go:67: - randInt: 4059
+DEBUG : 2019/06/07 18:32:35 metric.go:67: - randInt: 2081
+DEBUG : 2019/06/07 18:32:37 metric.go:67: - randInt: 1318
+DEBUG : 2019/06/07 18:32:38 metric.go:67: - randInt: 4425
