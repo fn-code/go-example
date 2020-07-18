@@ -15,9 +15,9 @@ func c() {
 type d func()
 
 func main() {
-
 	f := []d{a, b, c}
 	limit := make(chan int, 3)
+
 	for i, w := range f {
 		go func(w func(), i int) {
 			limit <- i
