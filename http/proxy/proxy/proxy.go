@@ -20,13 +20,13 @@ func (p *Proxys) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(http.StatusBadRequest)
 		return
 	}
-	fmt.Println(r.Host+ " - "+r.URL.String()+ " - "+r.URL.Path+ " - "+ r.RequestURI)
 	resp, err := p.Client.Do(r)
 	if err != nil {
 		log.Printf("error occurred during client operation: %s", err.Error())
 		w.WriteHeader(http.StatusInternalServerError)
 		return
 	}
+
 	defer resp.Body.Close()
 	p.Copy(w, resp)
 }
@@ -36,7 +36,6 @@ func (p *Proxys) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 func(p *Proxys) ProcessRequest(r *http.Request) error {
 	rawURI := fmt.Sprintf("%s%s", p.BaseURL, r.URL.String())
 
-	fmt.Println("-> ", rawURI)
 	pURL, err := url.Parse(rawURI)
 	if err != nil {
 		return err
@@ -44,7 +43,15 @@ func(p *Proxys) ProcessRequest(r *http.Request) error {
 	//fmt.Println(pURL.Path+ " - "+pURL.Host+ " - "+ pURL.RequestURI())
 	r.URL = pURL
 	r.Host = pURL.Host
+	r.URL.Scheme = pURL.Scheme
+	r.Header.Add("X-Forwarded-Host", pURL.Host)
+	r.Header.Add("X-Origin-Host", r.Host)
 	r.RequestURI = ""
+
+	if _, ok := r.Header["User-Agent"]; !ok {
+		r.Header.Set("User-Agent", "")
+	}
+
 	return nil
 }
 
@@ -56,8 +63,6 @@ func(p *Proxys) Copy(w http.ResponseWriter, r *http.Response) {
 			w.Header().Add(k, val)
 		}
 	}
-
 	w.WriteHeader(r.StatusCode)
 	io.Copy(w, r.Body)
-
 }

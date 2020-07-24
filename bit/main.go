@@ -1,0 +1,11 @@
+package main
+
+import "fmt"
+
+func main() {
+	//buf := []byte{0x4C, 0x75, 0x64, 0x69, 0x6E, 0x20, 0x4C, 0x75, 0x64, 0x69, 0x6E}
+	buf := []byte("Ludin Ludin")
+	fmt.Println(buf)
+	mask := byte(0xFF)
+	fmt.Println(mask)
+}
