@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/fn-code/Go-Example/interface/1_basic/task"
+	"github.com/fn-code/Go-Example/interface/1_basic/task/job"
 )
 
 
@@ -19,10 +19,10 @@ func AddTask(s string, i int) {
 
 func main() {
 	ct := &CustomTask{}
-	ts := &task.Tasks{}
+	ts := job.NewJob()
 	ts.Handle("path1", ct)
 	ts.HandleFunc("path2", AddTask)
-	task.Listen(ts, "path2")
+	job.Listen(ts, "path3")
 }
 
 
